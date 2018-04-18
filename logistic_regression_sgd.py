@@ -24,8 +24,7 @@ def SGD(X, t,max_iter = 500,tol = 0.00001):
     # Randomly permute the training data.
     #data = np.random.permutation(all_data)
     n_train = np.shape(t)[0]
-    final_weight_epoch= dict()
-    min_error = dict()
+   /////////
 
     for eta in etas:
         # Initialize w.
