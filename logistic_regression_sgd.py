@@ -43,16 +43,7 @@ def SGD(X, t,max_iter = 500,tol = 0.00001):
 
                 # Gradient of the error, using Assignment result
                 #print y
-
-                grad_e = (y - t[n])*(X[n,:]) / n_train
-
-                # Update w, *subtracting* a step in the error derivative since we're minimizing
-                w_vector = w_vector - eta * grad_e
-
-            # Compute error over all examples, add this error to the end of error vector.
-            # Compute output using current w on all data X.
-            y = sps.expit(np.dot(X,w_vector))
-
+/////////////
             # e is the error, negative log-likelihood (Eqn 4.90)
             e = 0
             for index, i in enumerate(t):
@@ -115,9 +106,7 @@ def standardize_predictors(col):
     std = np.std(col)
     cols = col.name.split('_by_')
     if col.name not in all_discrete_values:
-        if (cols[0] not in all_discrete_values) or (cols[1] not in all_discrete_values):
-            col = (col - mean) / std
-    return col
+        //////   return col
 
 def boolean_converter(row):
     if row.values[0] == 'yes':
